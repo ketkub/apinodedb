@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('apinodedb_f5l2', 'node_db_user', 'J6tse6tP0NXNP0j0bOtoJ7kqTh5qORrU', {
-host: 'dpg-crvpkj3tq21c738og07g-a',
+const sequelize = new Sequelize('apinodedb_aoqa', 'nodeapi', 'dSmqzXdcsrbFIZ1RqpGrE81mw6mVJvhz', {
+host: 'dpg-cs4evdd2ng1s739jbgt0-a',
 dialect: 'postgres',
 });
 
