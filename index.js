@@ -1,15 +1,21 @@
 const express = require('express');
-const sequelize = require('./config/db');
-const routes = require('./routes/index');
-
 const app = express();
+
+const userRoutes = require('./routes/userRoutes');
+const postRoutes = require('./routes/postRoutes');
+const restaurantRoutes = require('./routes/restaurantRoutes');
+const imageRoutes = require('./routes/imageRoutes');
+
 app.use(express.json());
-app.use('/api', routes);
 
+// ใช้ router ต่าง ๆ
+app.use('/api', userRoutes);
+app.use('/api', postRoutes);
+app.use('/api', restaurantRoutes);
+app.use('/api', imageRoutes);
+
+// เปิดให้บริการ
 const PORT = process.env.PORT || 3000;
-
-sequelize.sync().then(() => {
 app.listen(PORT, () => {
-console.log(`Server running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
-}).catch(error => console.error(error));
