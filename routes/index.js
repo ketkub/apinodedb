@@ -31,6 +31,7 @@ router.delete('/restaurants/:id', restaurantController.deleteRestaurant);
 router.post('/restaurants/:restaurantId/images', imageController.createImage);
 router.get('/restaurants/:restaurantId/images', imageController.getRestaurantImages);
 router.get('/images/:id', imageController.getImageById);
+router.get('/images', imageController.getImageById);
 router.put('/images/:id', imageController.updateImage);
 router.delete('/images/:id', imageController.deleteImage);
 
