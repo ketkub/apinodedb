@@ -1,5 +1,5 @@
 const Image = require('../models/image');
-const Restaurant = require('../models/restaurant');
+const Restaurant = require('../models/restaurants');
 
 exports.createImage = async (req, res) => {
     try {
