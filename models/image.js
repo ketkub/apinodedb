@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
-const Restaurant = require('./Restaurant'); // Import โมเดล Restaurant
+const Restaurant = require('./restaurant'); // Import โมเดล Restaurant
 
 const Image = sequelize.define('Image', {
     imageId: {

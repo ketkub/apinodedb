@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
 
-const Restaurant = sequelize.define('Restaurant', {
+const Restaurant = sequelize.define('restaurant', {
     restaurantId: {
         allowNull: false,
         autoIncrement: true,
