@@ -1,4 +1,4 @@
-const Restaurant = require('../models/restaurant'); // ตรวจสอบว่าเส้นทางนี้ถูกต้อง
+const Restaurant = require('../models/restaurants'); // ตรวจสอบว่าเส้นทางนี้ถูกต้อง
 
 // สร้างร้านอาหารใหม่
 exports.createRestaurant = async (req, res) => {
