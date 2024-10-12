@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
 const postController = require('../controllers/postController');
-const restaurantController = require('../controllers/restaurantController'); // แก้เป็น '../controllers/restaurantController'
-const imageController = require('../controllers/imageController'); // แก้เป็น '../controllers/imageController'
+const restaurantController = require('../controllers/restaurantController'); // ตรวจสอบให้แน่ใจว่าเส้นทางถูกต้อง
+const imageController = require('../controllers/imageController'); // ตรวจสอบให้แน่ใจว่าเส้นทางถูกต้อง
 
 // User routes
 router.post('/users', userController.createUser);
@@ -27,10 +27,10 @@ router.get('/restaurants/:id', restaurantController.getRestaurantById);
 router.put('/restaurants/:id', restaurantController.updateRestaurant);
 router.delete('/restaurants/:id', restaurantController.deleteRestaurant);
 
-// Image routes (เชื่อมกับ restaurants)
+// Image routes
 router.post('/restaurants/:restaurantId/images', imageController.createImage);
 router.get('/restaurants/:restaurantId/images', imageController.getRestaurantImages);
-router.get('/images', imageController.getImageById);
+router.get('/images/:id', imageController.getImageById);
 router.put('/images/:id', imageController.updateImage);
 router.delete('/images/:id', imageController.deleteImage);
 
