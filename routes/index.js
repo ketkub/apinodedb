@@ -19,6 +19,7 @@ router.get('/posts', postController.getPosts);
 router.get('/posts/:id', postController.getPostById);
 router.put('/posts/:id', postController.updatePost);
 router.delete('/posts/:id', postController.deletePost);
+router.delete('/users/:userId/posts/:id', postController.deletePost);
 
 // Restaurant routes
 router.post('/restaurants', restaurantController.createRestaurant);
