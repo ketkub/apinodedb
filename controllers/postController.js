@@ -50,32 +50,31 @@ res.status(500).json({ error: error.message });
 
 // แก้ไขโพสต์
 exports.updatePost = async (req, res) => {
-try {
-const [updated] = await Post.update(req.body, {
-where: { id: req.params.id },
-});
-if (!updated) {
-return res.status(404).json({ message: 'Post not found' });
-}
-const updatedPost = await Post.findByPk(req.params.id);
-res.status(200).json(updatedPost);
-} catch (error) {
-res.status(400).json({ error: error.message });
-}
+    try {
+        const [updated] = await Post.update(req.body, {
+            where: { postId: req.params.id },
+        });
+        if (!updated) {
+            return res.status(404).json({ message: 'Post not found' });
+        }
+        const updatedPost = await Post.findByPk(req.params.id);
+        res.status(200).json(updatedPost);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
 };
 
 // ลบโพสต์
 exports.deletePost = async (req, res) => {
-try {
-const deleted = await Post.destroy({
-where: { id: req.params.id },
-});
-if (!deleted) {
-
-return res.status(404).json({ message: 'Post not found' });
-}
-res.status(204).send();
-} catch (error) {
-res.status(500).json({ error: error.message });
-}
+    try {
+        const deleted = await Post.destroy({
+            where: { postId: req.params.id },
+        });
+        if (!deleted) {
+            return res.status(404).json({ message: 'Post not found' });
+        }
+        res.status(204).send();
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
