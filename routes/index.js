@@ -21,11 +21,11 @@ router.put('/posts/:id', postController.updatePost);
 router.delete('/posts/:id', postController.deletePost);
 
 // Restaurant routes
-router.post('/restaurants', restaurantController.createRestaurant);
-router.get('/restaurants', restaurantController.getRestaurants);
-router.get('/restaurants/:id', restaurantController.getRestaurantById);
-router.put('/restaurants/:id', restaurantController.updateRestaurant);
-router.delete('/restaurants/:id', restaurantController.deleteRestaurant);
+router.get('/', restaurantController.getAllRestaurants);
+router.get('/:id', restaurantController.getRestaurantById);
+router.post('/', restaurantController.createRestaurant);
+router.put('/:id', restaurantController.updateRestaurant);
+router.delete('/:id', restaurantController.deleteRestaurant);
 
 // Image routes
 router.post('/restaurants/:restaurantId/images', imageController.createImage);
