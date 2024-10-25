@@ -7,6 +7,7 @@ const imageController = require('../controllers/imageController'); // ตรว�
 
 // User routes
 router.post('/users', userController.createUser);
+router.post('/login', userController.login);
 router.get('/users', userController.getUsers);
 router.get('/users/:id', userController.getUserById);
 router.put('/users/:id', userController.updateUser);
