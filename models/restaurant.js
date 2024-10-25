@@ -19,6 +19,10 @@ const Restaurant = sequelize.define('restaurant', {
     description: {
         type: DataTypes.TEXT,
         allowNull: true
+    },
+    coverimage: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
 }, {
     tableName: 'restaurants'
