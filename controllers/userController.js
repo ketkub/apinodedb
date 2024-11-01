@@ -88,20 +88,15 @@ exports.deleteUser = async (req, res) => {
 // login ด้วย email และ password
 exports.login = async (req, res) => {
     try {
-        const user = await User.findOne({
-            where: { email: req.body.email }
-        });
-        if (!user) {
-            return res.status(404).json({ message: 'Email หรือ password ไม่ถูกต้อง' });
-        }
-
-        const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
-        if (!isPasswordValid) {
-            return res.status(404).json({ message: 'Email หรือ password ไม่ถูกต้อง' });
-        }
-        
-        res.status(200).json(user);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
+    const user = await User.findOne(
+    {
+    where: { email: req.body.email, password: req.body.password }
+    });
+    if (!user) {
+    return res.status(404).json({ message: 'email หรือ password ไม่ถูกต้อง' });
     }
-};
+    res.status(200).json(user);
+    } catch (error) {
+    res.status(500).json({ error: error.message });
+    }
+    };
