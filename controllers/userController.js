@@ -16,7 +16,7 @@ exports.createUser = async (req, res) => {
       const user = await User.create({
           username,
           email,
-          password: hashedPassword,
+          password,
           image: req.file ? req.file.filename : null // บันทึกรูปภาพ
       });
       res.status(201).json(user);
